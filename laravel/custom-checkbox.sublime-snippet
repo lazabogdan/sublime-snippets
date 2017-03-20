@@ -1,0 +1,20 @@
+<snippet>
+  <content><![CDATA[
+<div class="form-group{{ \$errors->has('$1') ? ' has-danger' : '' }}">
+  <label for="$1" class="custom-control custom-checkbox">
+    <input type="checkbox" class="custom-control-input" name="$1" id="$1" value="1"
+      @if(old('$1'))
+        checked
+      @endif>
+    <span class="custom-control-indicator"></span>
+    <span class="custom-control-description">${2:${1/(.+)/\u$1/g}}</span>
+  </label>
+  @if (\$errors->has('$1'))
+    <small class="form-control-feedback">
+      <strong>{{ \$errors->first('$1') }}</strong>
+    </small>
+  @endif
+</div>
+]]></content>
+  <tabTrigger>custom-checkbox:laravel</tabTrigger>
+</snippet>

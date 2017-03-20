@@ -1,0 +1,14 @@
+<snippet>
+  <content><![CDATA[
+<div class="form-group{{ \$errors->has('${1:email}') ? ' has-danger' : '' }}">
+  <label for="$1" class="form-control-label">${2:${1/(.+)/\u$1/g}}</label>
+  <input id="$1" type="${3:text}" class="form-control" name="$1" placeholder="Your $2" value="{{ old('$1') }}" required>
+  @if (\$errors->has('$1'))
+    <small class="form-control-feedback">
+      <strong>{{ \$errors->first('$1') }}</strong>
+    </small>
+  @endif
+</div>
+]]></content>
+  <tabTrigger>form:group:laravel</tabTrigger>
+</snippet>

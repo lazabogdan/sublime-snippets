@@ -1,0 +1,11 @@
+<snippet>
+  <content><![CDATA[
+<form action="{{ ${1:route('$2')} }}" method="POST">
+  {{ csrf_field() }}
+  ${3:{{ method_field('${4:PUT}') \}\}}
+  
+  $5
+</form>
+]]></content>
+  <tabTrigger>form:laravel</tabTrigger>
+</snippet>
